@@ -4,6 +4,7 @@ BIGF00t.sh is a FootPrinting Tool to use with masscan output
 
 
 BIGF00t.sh is meant to be used when scanning a wide scope of IPs and ports with masscan.
+
 https://github.com/robertdavidgraham/masscan
 
 Features:
