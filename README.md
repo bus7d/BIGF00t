@@ -16,7 +16,7 @@ _Host by Open Port Search Engine:BIGF00t.sh allow you to list and enumerate host
 
 Requirements:
 
-mkdir BIGF00t
+_mkdir BIGF00t
 
 _copy/paste BIGF00t.sh in BIGF00t/ directory
 
