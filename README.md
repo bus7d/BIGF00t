@@ -8,6 +8,8 @@ BIGF00t.sh is meant to be used when scanning a wide scope of IPs and ports with 
 
 https://github.com/robertdavidgraham/masscan
 
+----------
+
 FEATURES:
 
 ----------
