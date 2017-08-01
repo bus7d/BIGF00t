@@ -5,9 +5,10 @@ BIGF00t.sh is a FootPrinting Tool to use with masscan output
 
 BIGF00t.sh is meant to be used when scanning a wide scope of IPs and ports with masscan.
 
+
 https://github.com/robertdavidgraham/masscan
 
-Features:
+FEATURES:
 
 ----------
 
@@ -19,8 +20,9 @@ _Host Files: BIGF00t.sh creates one file for each alive IP found with a list of 
 
 _Host by Open Port Search Engine: BIGF00t.sh allow you to list and enumerate hosts IPs by ports
 
+------------
 
-Requirements:
+REQUIREMENTS:
 
 --------------
 _mkdir BIGF00t
@@ -33,5 +35,4 @@ _copy largescan.dat to BIGF00t/ directory
 
 _chmod -x BIGF00t.sh
 
-
-
+-------------------
