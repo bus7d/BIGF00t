@@ -8,15 +8,21 @@ BIGF00t.sh is meant to be used when scanning a wide scope of IPs and ports with 
 https://github.com/robertdavidgraham/masscan
 
 Features:
+
+----------
+
 _Alive Host List: BIGF00t.sh make a list of alive hosts
+
 _Host Port Ranking: BIGF00t.sh make a list of alive hosts by number of open ports descending
 
 _Host Files: BIGF00t.sh creates one file for each alive IP found with a list of their open ports
 
 _Host by Open Port Search Engine: BIGF00t.sh allow you to list and enumerate hosts IPs by ports
 
+
 Requirements:
 
+--------------
 _mkdir BIGF00t
 
 _copy/paste BIGF00t.sh in BIGF00t/ directory
