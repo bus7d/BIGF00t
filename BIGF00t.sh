@@ -1,7 +1,4 @@
 #!/bin/bash
-#rm alive.list
-#rm -f Alive
-#mkdirAlive
 mkdir DATA
 mkdir ports
 mkdir hosts
@@ -26,8 +23,6 @@ echo "--------------------------------------------------------------------------
 echo "Patience is a virtue.."
 echo "Now we gonna play hard..."
 echo "--------------------------------------------------------------------------------------------------------------------------";
-#for port in $(cat largescan.dat);do grep "Discovered" largescan.dat >> found.list;done    #open port list
-#cat largescan.dat
 portnum=$(wc -l DATA/largescan.dat|cut -d " " -f 1)
 echo "We found $portnum portz open on the ranges"
 echo "--------------------------------------------------------------------------------------------------------------------------";
@@ -50,7 +45,6 @@ while true ; do
 	echo "-------------------------------------------------------";
 	echo "Play Again?"
 	echo "You could list by port number"
-	echo 'Just enter service name  e.g:http or port number e.g:8080'
 	read service
 	echo "Looking for open port $service Hosts"
 	grep -r $service ports/ >> hosts/$service.host
