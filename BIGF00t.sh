@@ -23,10 +23,10 @@ echo "--------------------------------------------------------------------------
 echo "Patience is a virtue.."
 echo "Now we gonna play hard..."
 echo "--------------------------------------------------------------------------------------------------------------------------";
-portnum=$(wc -l DATA/largescan.dat|cut -d " " -f 1)
-echo "We found $portnum portz open on the ranges"
+portnum=$(wc -l largescan.dat|cut -d " " -f 1)
+echo "We found $portnum portz open on the ranges"echo "The result of your search is stored in /hosts/$service.host"
 echo "--------------------------------------------------------------------------------------------------------------------------";
-cat  DATA/largescan.dat|cut -d " " -f 6 | sort -u >> DATA/alive.list #alive host list from open port list
+cat  largescan.dat|cut -d " " -f 6 | sort -u >> DATA/alive.list #alive host list from open port list
 echo "Alive Host List"
 cat DATA/alive.list
 echo "---------------------------------------------------------------------------------------------------------------------------";
@@ -42,7 +42,7 @@ echo "Look at Top and Bottom of List interesting hosts could be within..."
 cat DATA/port.rank |sort -rn
 
 while true ; do
-	echo "-------------------------------------------------------";
+	echo "-------------------------------------------------------"
 	echo "Play Again?"
 	echo "You could list by port number"
 	echo "The result of your search is stored in /hosts/$service.host"
@@ -51,3 +51,4 @@ while true ; do
 	grep -r -w "$service" ports/ >> hosts/$service.host
 	cat hosts/$service.host|cut -d " " -f 6 |sort -u
 done
+
