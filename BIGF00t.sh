@@ -45,8 +45,9 @@ while true ; do
 	echo "-------------------------------------------------------";
 	echo "Play Again?"
 	echo "You could list by port number"
+	echo "The result of your search is stored in /hosts/$service.host"
 	read service
 	echo "Looking for open port $service Hosts"
 	grep -r -w "$service" ports/ >> hosts/$service.host
-	cat hosts/$service.host|cut -d " " -f 6 
+	cat hosts/$service.host|cut -d " " -f 6 |sort -u
 done
