@@ -20,7 +20,7 @@ _Host Port Ranking: BIGF00t.sh make a list of alive hosts by number of open port
 
 _Host Files: BIGF00t.sh creates one file for each alive IP found with a list of their open ports
 
-_Host by Open Port Search Engine: BIGF00t.sh allow you to list and enumerate hosts IPs by ports
+_Host by Open Port Search Engine: BIGF00t.sh allow you to list and enumerate hosts IPs by ports + create a file with the search result
 
 ------------
 
