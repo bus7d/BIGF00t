@@ -40,15 +40,23 @@ for ip in $(ls ports/);do wc -l ports/$ip >> DATA/port.rank; done
 echo "Host Port Ranking List"
 echo "Look at Top and Bottom of List interesting hosts could be within..."
 cat DATA/port.rank |sort -rn
+echo "---------------------------------------------------------------------------------------------------------------------------";
+echo " TCP Port Listing:"
+echo "---------------------------------------------------------------------------------------------------------------------------";
+cat largescan.dat |cut -d " " -f 4 |sort -u|cut -d "/" -f 1 |sort -V
+echo "---------------------------------------------------------------------------------------------------------------------------";
 
+
+echo "Launching Heavy Search Engine:"
 while true ; do
-	echo "-------------------------------------------------------"
-	echo "Play Again?"
+	
+	echo "---------------------------------------------------------------------------------------------------------------------------";
 	echo "You could list by port number"
 	echo "The result of your search is stored in /hosts/$service.host"
 	read service
-	echo "Looking for open port $service Hosts"
+	echo "Looking for open port TCP $service Hosts"
 	grep -r -w "$service" ports/ >> hosts/$service.host
 	cat hosts/$service.host|cut -d " " -f 6 |sort -u
+	echo "Play Again?"
 done
 
