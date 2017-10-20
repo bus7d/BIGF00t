@@ -35,6 +35,6 @@ _Launch masscan and add ">>largescan.dat" at the end of your masscan command
 
 _copy largescan.dat to BIGF00t/ directory
 
-_chmod -x BIGF00t.sh
+_chmod 7?? BIGF00t.sh
 
 -------------------
