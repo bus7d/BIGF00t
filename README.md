@@ -13,6 +13,9 @@ https://github.com/robertdavidgraham/masscan
 FEATURES:
 
 ----------
+_Open TCP Ports found 
+
+_Tcp Port Number List
 
 _Alive Host List: BIGF00t.sh make a list of alive hosts
 
