@@ -13,9 +13,9 @@ https://github.com/robertdavidgraham/masscan
 FEATURES:
 
 ----------
-_Open TCP Ports found:BIGF00t.sh display the number of open TCP Ports on the range(s)
+_Open TCP Ports found: BIGF00t.sh display the number of open TCP Ports on the range(s)
 
-_Tcp Port Number List:BIGF00t.sh make a list of TCP Port Numbers
+_Tcp Port Number List: BIGF00t.sh make a list of TCP Port Numbers
 
 _Alive Host List: BIGF00t.sh make a list of alive hosts
 
