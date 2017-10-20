@@ -24,7 +24,7 @@ echo "Patience is a virtue.."
 echo "Now we gonna play hard..."
 echo "--------------------------------------------------------------------------------------------------------------------------";
 portnum=$(wc -l largescan.dat|cut -d " " -f 1)
-echo "We found $portnum portz open on the ranges"echo "The result of your search is stored in /hosts/$service.host"
+echo "We found $portnum portz open on the ranges"
 echo "--------------------------------------------------------------------------------------------------------------------------";
 cat  largescan.dat|cut -d " " -f 6 | sort -u >> DATA/alive.list #alive host list from open port list
 echo "Alive Host List"
@@ -51,12 +51,23 @@ echo "Launching Heavy Search Engine:"
 while true ; do
 	
 	echo "---------------------------------------------------------------------------------------------------------------------------";
-	echo "You could list by port number"
-	echo "The result of your search is stored in /hosts/$service.host"
+	echo "You could list by port number or display the TCP Port List with [list]"
+	
 	read service
-	echo "Looking for open port TCP $service Hosts"
-	grep -r -w "$service" ports/ >> hosts/$service.host
-	cat hosts/$service.host|cut -d " " -f 6 |sort -u
-	echo "Play Again?"
+
+	if [ $service = "list" ] ; then 
+		echo " TCP Port Listing:"
+		echo "---------------------------------------------------------------------------------------------------------------------------";
+		cat largescan.dat |cut -d " " -f 4 |sort -u|cut -d "/" -f 1 |sort -V
+		echo "---------------------------------------------------------------------------------------------------------------------------";
+	else
+
+
+		echo "Looking for open port TCP $service Hosts"
+		grep -r -w "$service" ports/ >> hosts/$service.host
+		echo "The result of your search is stored in /hosts/$service.host"
+		cat hosts/$service.host|cut -d " " -f 6 |sort -u
+		echo "Play Again?"
+	fi
 done
 
