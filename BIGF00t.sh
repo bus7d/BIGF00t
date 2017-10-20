@@ -29,7 +29,7 @@ echo "--------------------------------------------------------------------------
 cat  DATA/largescan.dat|cut -d " " -f 6 | sort -u >> DATA/alive.list #alive host list from open port list
 echo "Alive Host List"
 cat DATA/alive.list
-echo "---------------------------------------------------------------------------------------------------------------------------;
+echo "---------------------------------------------------------------------------------------------------------------------------";
 echo "Building Hosts Files.."
 echo "----------------------------------------------------------------------";
 for ip in $(cat DATA/alive.list); do grep $ip largescan.dat >> ports/$ip;done #host files with list of open ports 
