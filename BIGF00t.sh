@@ -47,6 +47,6 @@ while true ; do
 	echo "You could list by port number"
 	read service
 	echo "Looking for open port $service Hosts"
-	grep -r $service ports/ >> hosts/$service.host
+	grep -r -w "$service" ports/ >> hosts/$service.host
 	cat hosts/$service.host|cut -d " " -f 6 
 done
