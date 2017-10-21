@@ -1,9 +1,8 @@
 # BIGF00t
-BIGF00t.sh is a FootPrinting Tool to use with masscan output 
+BIGF00t.sh is a FootPrinting Tool to handle large masscan output
 
 
-
-BIGF00t.sh is meant to be used when scanning a wide scope of IPs and ports with masscan.
+BIGF00t.sh is meant to be used when scanning a wide scope of IPs and ports with masscan so nmap
 
 
 https://github.com/robertdavidgraham/masscan
