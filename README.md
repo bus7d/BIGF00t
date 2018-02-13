@@ -33,7 +33,7 @@ _mkdir BIGF00t
 
 _copy/paste BIGF00t.sh in BIGF00t/ directory
 
-_Launch masscan and add ">>largescan.dat" at the end of your masscan command
+_Launch masscan and add ">>largescan.dat" at the end of your masscan or nmap -n -v command
 
 _copy largescan.dat to BIGF00t/ directory
 
