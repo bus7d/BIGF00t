@@ -23,16 +23,15 @@ echo "--------------------------------------------------------------------------
 echo "Patience is a virtue.."
 echo "Now we gonna play hard..."
 echo "--------------------------------------------------------------------------------------------------------------------------";
-portnum=$(wc -l largescan.dat|cut -d " " -f 1)
-echo "We found $portnum ports open on the range(s)"
-echo "--------------------------------------------------------------------------------------------------------------------------";
-cat  largescan.dat|cut -d " " -f 6 | sort -u >> DATA/alive.list #alive host list from open port list
+cat  largescan.dat|grep Discovered |cut -d " " -f 6 | sort -u >> DATA/alive.list #alive host list from open port list
 echo "Alive Host List"
+alivenum=$(wc -l DATA/alive.list) 
+echo "We found $alivenum hosts alive"
 cat DATA/alive.list
 echo "---------------------------------------------------------------------------------------------------------------------------";
 echo "Building Hosts Files.."
 echo "----------------------------------------------------------------------";
-for ip in $(cat DATA/alive.list); do grep $ip largescan.dat >> ports/$ip;done #host files with list of open ports 
+for ip in $(cat DATA/alive.list); do grep -w $ip largescan.dat|sort -u >> ports/$ip;done #host files with list of open ports 
 
 echo "DONE! Now you have a file for each alive host with their open ports check with 'ls ports/ in another terminal[Ctrl+Shift+T]'"
 
@@ -43,9 +42,11 @@ cat DATA/port.rank |sort -rn
 echo "---------------------------------------------------------------------------------------------------------------------------";
 echo " TCP Port Listing:"
 echo "---------------------------------------------------------------------------------------------------------------------------";
-cat largescan.dat |cut -d " " -f 4 |sort -u|cut -d "/" -f 1 |sort -V
+cat largescan.dat|grep Discovered|grep -v delay|grep -v report|cut -d " " -f 4 |sort -u|cut -d "/" -f 1 |sort -V |tree > tcp_port_list.txt
 echo "---------------------------------------------------------------------------------------------------------------------------";
-
+portnum=$(wc -l tcp_port_list.txt|cut -d " " -f 1)
+echo "We found $portnum ports open on the range(s)"
+echo "--------------------------------------------------------------------------------------------------------------------------";
 
 echo "Launching Heavy Search Engine:"
 while true ; do
@@ -58,7 +59,7 @@ while true ; do
 	if [ $service = "list" ] ; then 
 		echo " TCP Port Listing:"
 		echo "---------------------------------------------------------------------------------------------------------------------------";
-		cat largescan.dat |cut -d " " -f 4 |sort -u|cut -d "/" -f 1 |sort -V
+		cat largescan.dat|grep Discovered|grep -v delay|grep -v report|cut -d " " -f 4 |sort -u|cut -d "/" -f 1 |sort -V
 		echo "---------------------------------------------------------------------------------------------------------------------------";
 	else
 
@@ -70,4 +71,3 @@ while true ; do
 		echo "Play Again?"
 	fi
 done
-
